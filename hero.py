@@ -1,6 +1,6 @@
 from typing import Optional
 
-from sqlmodel import Field, SQLModel, create_engine
+from sqlmodel import Field, SQLModel
 
 
 class Hero(SQLModel, table=True):
@@ -8,4 +8,5 @@ class Hero(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     name: str
     secret_name: str
+    # in this context, Optional[int] means an instance of this class can be created without specifying a value for age.
     age: Optional[int] = None
